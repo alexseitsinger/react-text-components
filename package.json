@@ -1,6 +1,6 @@
 {
   "name": "@alexseitsinger/react-text-components",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Some generic React components for displaying text",
   "main": "index.js",
   "types": "types/index.d.ts",
