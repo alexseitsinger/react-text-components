@@ -1,7 +1,7 @@
-import styled from "@emotion/styled"
 import { css } from "@emotion/core"
+import styled from "@emotion/styled"
 
-import { withTheme, getSize, ThemeSettings } from "./theme"
+import { getSize, ThemeSettings,withTheme } from "./theme"
 
 export const BiggestHeading = withTheme(styled.h1`
   font: inherit;

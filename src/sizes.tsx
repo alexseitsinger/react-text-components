@@ -1,24 +1,25 @@
-import styled from "@emotion/styled"
-import { css } from "@emotion/core"
-
-import { ThemeSettings, withTheme, getSize } from "./theme"
 import { FC } from "react"
+import { css } from "@emotion/core"
+import styled from "@emotion/styled"
+
+import { getSize,ThemeSettings, withTheme } from "./theme"
 
 type Props = ThemeSettings & {
-  isBlock?: boolean;
+  isBlock?: boolean,
 }
 
-const createText = (addedSize: number): FC => withTheme(styled.span`
-  ${({ normalSize, isBlock }: Props): any => {
-    let lines = [
-      `font-size: ${getSize(normalSize, addedSize)};`,
-    ]
-    if (isBlock !== undefined && isBlock) {
-      lines = [...lines, `display: block;`]
-    }
-    return css`${lines.join("")}`
-  }}
-`)
+const createText = (addedSize: number): FC =>
+  withTheme(styled.span`
+    ${({ normalSize, isBlock }: Props): any => {
+      let lines = [`font-size: ${getSize(normalSize, addedSize)};`]
+      if (isBlock !== undefined && isBlock) {
+        lines = [...lines, `display: block;`]
+      }
+      return css`
+        ${lines.join("")}
+      `
+    }}
+  `)
 
 export const NormalText = createText(0)
 export const BigText = createText(3)

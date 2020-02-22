@@ -2,7 +2,6 @@ import React, { ReactElement, ReactNode } from "react"
 import styled from "@emotion/styled"
 
 import { withTheme } from "./theme"
-import { SmallerText } from "./sizes"
 
 export const BoldText = styled.span`
   font-weight: 600;
@@ -16,12 +15,8 @@ interface Props {
   children: ReactNode | ReactNode[];
 }
 
-export const SuperText = withTheme(
-  ({ children }: Props): ReactElement => (
-    <BoldText>
-      <UppercaseText>
-        {children}
-      </UppercaseText>
-    </BoldText>
-  )
-)
+export const SuperText = withTheme(({ children }: Props): ReactElement => (
+  <BoldText>
+    <UppercaseText>{children}</UppercaseText>
+  </BoldText>
+))
